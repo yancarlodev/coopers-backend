@@ -11,7 +11,7 @@ export default async function RegisterService(validatedData: ISession): Promise<
         password: hashedPassword
     }
     
-    const newUser = await prisma.users.create({
+    const newUser: Users = await prisma.users.create({
         data: userWithHashedPassword
     })
 
