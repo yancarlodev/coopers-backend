@@ -1,4 +1,3 @@
-export interface ISessionRequest {
-    email: string,
-    password: string
-}
+import { Users } from "@prisma/client"
+
+export type ISession = Omit<Users, 'id'>

@@ -1,8 +1,8 @@
 import { SchemaOf } from 'yup'
 import { Request, Response, NextFunction } from 'express'
-import { ISessionRequest } from '../interfaces/session.interface'
+import { ISession } from '../interfaces/session.interface'
 
-const validateSerializer = (serializer: SchemaOf<ISessionRequest>) => async (req: Request, res: Response, next: NextFunction) => {
+const validateSerializer = (serializer: SchemaOf<ISession>) => async (req: Request, res: Response, next: NextFunction) => {
     try {
         const validatedBody = await serializer.validate(req.body, {
             stripUnknown: true,
