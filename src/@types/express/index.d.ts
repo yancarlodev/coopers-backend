@@ -1,11 +1,11 @@
-import * as express from "express"
-import { ISessionRequest } from "../../interfaces/session.interface"
+import * as express from 'express'
+import { ISession } from '../../interfaces/session.interface'
 
 declare global {
     namespace Express {
         interface Request {
             userId: string,
-            validatedBody: ISessionRequest
+            validatedBody: ISession
         }
     }
 }
