@@ -22,7 +22,7 @@ model Users {
 model ToDos {
     id          String  @id @default(uuid())
     title       String  @db.VarChar(256)
-    isComplete  Boolean @default(false)
+    isComplete  Boolean? @default(false)
     user        Users @relation(fields: [userId], references: [id], onDelete: Cascade)
     userId      String
 
