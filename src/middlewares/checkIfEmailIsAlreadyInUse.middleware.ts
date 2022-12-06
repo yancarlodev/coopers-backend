@@ -12,7 +12,10 @@ export default async function checkIfEmailIsAlreadyInUseMiddleware(req: Request,
     })
     
     if(isEmailAlreadyInUse) {
-        throw new AppError('Email already in use', 409)
+        return res.status(409).json({
+            statusCode: 409,
+            message: 'Email is already in use'
+        })
     }
 
     return next()
