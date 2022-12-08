@@ -82,6 +82,30 @@ $ npm run dev
 # Se tudo der certo, você verá a seguinte mensagem no terminal "App listening on port <Porta definida no dotenv>. Let's track ours tasks!"
 ```
 
+## ✅ Passos para rodar o docker
+
+### 1. Duplique o arquivo .env.example e renomeie para docker.env
+
+### 2. Preencha as informações, conforme o seguinte:
+
+```bash
+# Porta onde será rodado a aplicação
+PORT=
+
+# Chave secreta para ser utilizado pelo JWT
+SECRET_KEY=
+
+# Só é necessário mudar os campos envoltos por <>. ATENÇÃO, garanta que o após o @ esteja database:5432, e não localhost:5432
+DATABASE_URL="postgresql://<user>:<password>@database:5432/<database>?schema=public"
+
+# O dados de login para o PostgreSQL, é necessário ser o mesmo que o colocado a cima
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_DB=
+```
+
+### 3. Após configura do docker.env, é só rodar o "docker compose up --build"
+
 <br/>
 
 ### 🎲 Testes automatizados
