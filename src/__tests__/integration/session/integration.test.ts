@@ -80,6 +80,11 @@ describe('Integration tests (e2e)', () => {
 
         describe('GET ---> /todos', () => {
             it('Should be able to get all to-dos', async () => {
+                await request(app).post('/session/register').send(mockedAlternativeUser)
+                const loggedAlternativeUser = await request(app).post('/session/login').send(mockedAlternativeUser)
+                alternativeUserToken = loggedAlternativeUser.body.token
+
+                await request(app).post('/todos').send({ title: 'Pick up the son at school' }).set('Authorization', `Bearer ${alternativeUserToken}`)
                 await request(app).post('/todos').send({ title: 'Do the homework' }).set('Authorization', `Bearer ${token}`)
 
                 const response = await request(app).get('/todos').set('Authorization', `Bearer ${token}`)
@@ -162,10 +167,6 @@ describe('Integration tests (e2e)', () => {
             })
 
             it('Should not be able to update a not owned to-do', async () => {
-                await request(app).post('/session/register').send(mockedAlternativeUser)
-                const loggedAlternativeUser = await request(app).post('/session/login').send(mockedAlternativeUser)
-                alternativeUserToken = loggedAlternativeUser.body.token
-
                 const response = await request(app).patch(`/todos/${toDoId}`).set('Authorization', `Bearer ${alternativeUserToken}`)
     
                 expect(response.status).toBe(403)
