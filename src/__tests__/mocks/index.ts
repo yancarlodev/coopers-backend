@@ -1,5 +1,5 @@
 import { ISession } from "../../interfaces/session.interface"
-import { IToDoSerializer } from "../../interfaces/toDos.interface"
+import { IToDo } from "../../interfaces/toDos.interface"
 
 export const mockedUser: ISession = {
     email: "matheuslima@mail.com",
@@ -21,11 +21,11 @@ export const mockedAlternativeUser: ISession = {
     password: "Teste123"
 }
 
-export const mockedToDo: IToDoSerializer = {
+export const mockedToDo: IToDo = {
     title: "Do the laundry",
     isComplete: false
 }
 
-export const mockedToDoWithoutIsComplete: Partial<IToDoSerializer> = {
+export const mockedToDoWithoutIsComplete: Partial<IToDo> = {
     title: "Clean-up the house"
 }
