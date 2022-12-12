@@ -15,7 +15,6 @@
 - [x] PostgreSQL - Banco de dados
 - [x] Yup - validação de dados
 - [x] Express Async Errors - gerenciador de erros
-- [x] Heroku - Deploy da aplicação
 - [x] Docker - Containerização da aplicação
 
 
@@ -23,8 +22,7 @@
 
 ## ✅ Links
 
-- [x] Aplicação em produção: https://ng-transfer.herokuapp.com/
-- [x] <a href="https://github.com/yancarlodev/coopers-backend">Github do projeto</a>
+- [x] <a href="https://github.com/yancarlodev/coopers-frontend">Front-end do projeto</a>
 
 <br/>
 
